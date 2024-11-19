@@ -21,3 +21,8 @@ input[type="number"] {
 input[type="number"]::-ms-clear {
   display: none;
 }
+
+.solar {
+  text-shadow: 0px 0px 50px orange;
+  color: orange;
+}

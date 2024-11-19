@@ -1,13 +1,24 @@
-import React from "react";
+import { Suspense, lazy, useState } from "react";
+
 import { FcMoneyTransfer } from "react-icons/fc";
 import { AiOutlineContacts } from "react-icons/ai";
+const LazyBgVideo = lazy(() => import("./BgVideo"));
 
 const HeroSection = () => {
   return (
     <div>
       <section className="relative pt-24 pb-10 -mt-20 ">
-        <div className="absolute inset-0 bg-[url('https://i0.wp.com/www.grankia.com/wp-content/uploads/2024/04/9-Steps-for-Installing-Solar-Panels-on-Roof.jpg?fit=1200%2C675&ssl=1')] bg-no-repeat bg-cover  z-0 "></div>
-        <div className="absolute inset-0 bg-slate-700 opacity-80 filter brightness-50 z-0"></div>
+        {/*bg color */}
+        <div className="absolute inset-0 bg-slate-700 opacity-60 filter brightness-50 z-10"></div>
+
+        {/* bg video */}
+        <Suspense
+          fallback={
+            <div className="absolute inset-0 bg-[url('/solarBgImage.jpeg')] bg-no-repeat bg-cover z-0"></div>
+          }
+        >
+          <LazyBgVideo />
+        </Suspense>
 
         <div className="py-8 px-4 mx-auto max-w-screen-lg text-center lg:py-16 lg:px-12 relative z-10 ">
           <div
@@ -20,7 +31,8 @@ const HeroSection = () => {
             </span>
           </div>
           <h1 className=" pb-5 mb-4 font-mont text-4xl font-extrabold tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-t from-blue-200  to-white md:text-5xl lg:text-6xl">
-            Power Your Future with Clean, Renewable Solar Energy
+            Power Your Future with Clean, Renewable{" "}
+            <span className="solar">Solar Energy</span>
           </h1>
 
           <p className="mb-8 text-lg font-normal text-white lg:text-2xl sm:px-16 xl:px-48 font-robot  ">

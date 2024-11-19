@@ -1,19 +1,20 @@
-import Home from "./Pages/Home";
-import Contact from "./Pages/Contact";
-import Blog from "./Pages/Blog";
-import SolarCalculator from "./Pages/SolarCalculator";
-import Footer from "./components/common/Footer";
-import Navbar from "./components/common/Navbar";
-import FixedIcon from "./components/common/FixedIcon";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Lazy-load components
+const Home = lazy(() => import("./Pages/Home"));
+const Contact = lazy(() => import("./components/Home/HomeContact"));
+const Blog = lazy(() => import("./Pages/Blog"));
+const SolarCalculator = lazy(() => import("./Pages/SolarCalculator"));
+const Footer = lazy(() => import("./components/common/Footer"));
+const Navbar = lazy(() => import("./components/common/Navbar"));
+const FixedIcon = lazy(() => import("./components/common/FixedIcon"));
 
 function App() {
   return (
-    <>
-      <div className="max-w-[1700px] mx-auto" id="toTop">
-        <Router
-          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-        >
+    <div className="max-w-[1700px] mx-auto" id="toTop">
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Suspense fallback={<div>Loading...</div>}>
           <Navbar />
           <FixedIcon />
           <Routes>
@@ -23,9 +24,9 @@ function App() {
             <Route path="/solarCalculator" element={<SolarCalculator />} />
           </Routes>
           <Footer />
-        </Router>
-      </div>
-    </>
+        </Suspense>
+      </Router>
+    </div>
   );
 }
 
