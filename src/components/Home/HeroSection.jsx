@@ -5,8 +5,8 @@ import { AiOutlineContacts } from "react-icons/ai";
 const HeroSection = () => {
   return (
     <div>
-      <section className="relative bg-[url('https://i0.wp.com/www.grankia.com/wp-content/uploads/2024/04/9-Steps-for-Installing-Solar-Panels-on-Roof.jpg?fit=1200%2C675&ssl=1')] bg-no-repeat bg-cover pt-24 pb-10 -mt-20 ">
-        {/* <div className="absolute inset-0 bg-orange-500  opacity-70 z-0 "></div> */}
+      <section className="relative pt-24 pb-10 -mt-20 ">
+        <div className="absolute inset-0 bg-[url('https://i0.wp.com/www.grankia.com/wp-content/uploads/2024/04/9-Steps-for-Installing-Solar-Panels-on-Roof.jpg?fit=1200%2C675&ssl=1')] bg-no-repeat bg-cover  z-0 "></div>
         <div className="absolute inset-0 bg-slate-700 opacity-80 filter brightness-50 z-0"></div>
 
         <div className="py-8 px-4 mx-auto max-w-screen-lg text-center lg:py-16 lg:px-12 relative z-10 ">
