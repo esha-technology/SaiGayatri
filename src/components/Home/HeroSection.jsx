@@ -1,10 +1,27 @@
-import { Suspense, lazy, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FcMoneyTransfer } from "react-icons/fc";
 import { AiOutlineContacts } from "react-icons/ai";
-const LazyBgVideo = lazy(() => import("./BgVideo"));
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setVideoLoaded(true);
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
   return (
     <div>
       <section className="relative pt-24 pb-10 -mt-20 ">
@@ -12,13 +29,21 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-slate-700 opacity-60 filter brightness-50 z-10"></div>
 
         {/* bg video */}
-        <Suspense
-          fallback={
-            <div className="absolute inset-0 bg-[url('/solarBgImage.jpeg')] bg-no-repeat bg-cover z-0"></div>
-          }
-        >
-          <LazyBgVideo />
-        </Suspense>
+        <div className="absolute inset-0 bg-[url('/solarBgImage.jpeg')] bg-no-repeat bg-cover z-0"></div>
+
+        <div className={`absolute inset-0 z-0 ${videoLoaded ? "" : "hidden"}`}>
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            preload="none" // Prevent video from loading prematurely
+            onLoadedData={handleVideoLoad} // When video is fully loaded
+          >
+            <source src="/BgVideoSolar.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
         <div className="py-8 px-4 mx-auto max-w-screen-lg text-center lg:py-16 lg:px-12 relative z-10 ">
           <div
@@ -34,20 +59,22 @@ const HeroSection = () => {
             Power Your Future with Clean, Renewable{" "}
             <span className="solar">Solar Energy</span>
           </h1>
-
           <p className="mb-8 text-lg font-normal text-white lg:text-2xl sm:px-16 xl:px-48 font-robot  ">
             Start your solar journey today and enjoy long-term savings with
             clean energy.
           </p>
-          <div>
-            <button className="relative flex  w-fit items-center justify-center overflow-hidden bg-blue-500 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-gray-600 before:duration-500 before:ease-out hover:shadow-gray-600 hover:before:h-56 hover:before:w-80 px-5 py-3 mx-auto font-semibold mt-14 rounded-lg">
-              <span className="relative z-10 flex justify-center items-center gap-2 text-xl  font-poppins">
-                {" "}
-                <AiOutlineContacts size={30} />
-                Book An Appointment
-              </span>
-            </button>
-          </div>
+
+          <Link to={"/appointment"}>
+            <div>
+              <button className="relative flex  w-fit items-center justify-center overflow-hidden bg-blue-500 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-gray-600 before:duration-500 before:ease-out hover:shadow-gray-600 hover:before:h-56 hover:before:w-80 px-5 py-3 mx-auto font-semibold mt-14 rounded-lg">
+                <span className="relative z-10 flex justify-center items-center gap-2 text-xl  font-poppins">
+                  {" "}
+                  <AiOutlineContacts size={30} />
+                  Book An Appointment
+                </span>
+              </button>
+            </div>
+          </Link>
         </div>
       </section>
     </div>

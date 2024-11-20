@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Appointment from "./Pages/Appointment";
 
 // Lazy-load components
 const Home = lazy(() => import("./Pages/Home"));
-const Contact = lazy(() => import("./components/Home/HomeContact"));
 const Blog = lazy(() => import("./Pages/Blog"));
 const SolarCalculator = lazy(() => import("./Pages/SolarCalculator"));
 const Footer = lazy(() => import("./components/common/Footer"));
@@ -19,9 +19,9 @@ function App() {
           <FixedIcon />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/solarCalculator" element={<SolarCalculator />} />
+            <Route path="/appointment" element={<Appointment />} />
           </Routes>
           <Footer />
         </Suspense>
