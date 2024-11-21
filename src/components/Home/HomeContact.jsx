@@ -1,4 +1,6 @@
-import React from "react";
+import emailjs from "emailjs-com";
+
+import React, { useRef, useState } from "react";
 import Heading from "../common/Heading";
 import { IoIosPerson } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
@@ -11,6 +13,74 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa"; // Import specific icons
 
 const HomeContact = () => {
+  const form = useRef();
+  const [errorMessage, setErrorMessage] = useState(""); // To store error message
+  const [successMessage, setSuccessMessage] = useState(""); // To store success message
+  const [loading, setLoading] = useState(false); // Loading state
+  const [afterAppoinment, setAfterAppoinment] = useState(false);
+
+  // Handle form submission
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    // Check if all fields are filled
+    const formElements = form.current.elements;
+    let allFieldsFilled = true;
+    for (let element of formElements) {
+      if (element.type !== "submit" && !element.value) {
+        allFieldsFilled = false;
+        break;
+      }
+    }
+
+    if (!allFieldsFilled) {
+      setErrorMessage("Please fill in all the fields before submitting.");
+      setSuccessMessage(""); // Clear success message
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
+      return; // Stop submission if any field is empty
+    }
+
+    // Begin loading
+    setLoading(true);
+    setErrorMessage(""); // Clear previous error messages
+    setSuccessMessage(""); // Clear previous success messages
+
+    // Send email using EmailJS
+    emailjs
+      .sendForm(
+        "service_jqgb7uk", // Replace with your EmailJS Service ID
+        "template_i9hlkyq", // Replace with your EmailJS Template ID
+        form.current,
+        "vYSnrQV_fGtlEjhat" // Replace with your EmailJS User ID
+      )
+      .then(
+        (result) => {
+          setLoading(false);
+          setSuccessMessage("Our Team Contact You Soon!"); // Set success message
+          setErrorMessage(""); // Clear any error message
+          form.current.reset(); // Reset form after successful submission
+          setAfterAppoinment(true);
+
+          setTimeout(() => {
+            setSuccessMessage(""); // Set success message
+          }, 5000);
+        },
+        (error) => {
+          console.error("Error sending message: ", error.text);
+          setErrorMessage("Something went wrong, please try again.");
+          setSuccessMessage(""); // Clear success message
+        }
+      );
+
+    emailjs.sendForm(
+      "service_jqgb7uk", // Replace with your EmailJS Service ID
+      "template_6gfrtuh", // Replace with your EmailJS Template ID
+      form.current,
+      "vYSnrQV_fGtlEjhat" // Replace with your EmailJS User ID
+    );
+  };
   return (
     <section className="relative  overflow-hidden  bg-[url('/solarBgImage.jpeg')] bg-no-repeat bg-cover bg-center lg:py-16 lg:px-10 py-5 px-0 grid grid-cols-1 md:grid-cols-2 gap-10 ">
       <div className="absolute inset-0 bg-slate-700 opacity-80 filter brightness-50 z-0"></div>
@@ -61,80 +131,107 @@ const HomeContact = () => {
           <div className="mb-6 text-center sm:text-left">
             <Heading>Contact Us</Heading>
           </div>
-          <form action="#" className="space-y-5">
-            <div>
-              <label
-                htmlFor="name"
-                className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
-              >
-                <IoIosPerson />
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="block w-full p-3 text-medium text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Enter Your Full Name Here"
-                required
-              />
-            </div>
+          <div>
+            {errorMessage && (
+              <div className="error-message text-red-500 mb-3">
+                {errorMessage}
+              </div>
+            )}
+            {successMessage && (
+              <div className="success-message text-green-500 mb-3">
+                {successMessage}
+              </div>
+            )}
 
-            <div>
-              <label
-                htmlFor="email"
-                className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
-              >
-                <MdEmail />
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-medium rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-                placeholder="name@xyz.com"
-                required
-              />
-            </div>
+            <form ref={form} onSubmit={sendEmail} className="space-y-5">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
+                >
+                  <IoIosPerson />
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="block w-full p-3 text-medium text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
+                  placeholder="Enter Your Full Name Here"
+                  required
+                />
+              </div>
 
-            <div>
-              <label
-                htmlFor="phone"
-                className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
-              >
-                <PiPhoneFill />
-                Phone
-              </label>
-              <input
-                type="number"
-                id="phone"
-                className="block w-full p-3 text-medium text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Enter Your Phone Number Here"
-                required
-              />
-            </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
+                >
+                  <MdEmail />
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-medium rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                  placeholder="name@xyz.com"
+                  required
+                />
+              </div>
 
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="message"
-                className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
-              >
-                <RiMessage3Fill /> Message
-              </label>
-              <textarea
-                id="message"
-                rows="3"
-                className="block w-full p-2.5 text-medium text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Leave a comment..."
-              ></textarea>
-            </div>
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
+                >
+                  <PiPhoneFill />
+                  Phone
+                </label>
+                <input
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  className="block w-full p-3 text-medium text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
+                  placeholder="Enter Your Phone Number Here"
+                  required
+                />
+              </div>
 
-            <div className="flex justify-center sm:justify-end">
-              <button className="bg-blue-500 text-white px-10 py-2 rounded-md text-xl hover:bg-blue-800 flex items-center gap-2">
-                <FaCheckCircle />
-                Submit
-              </button>
-            </div>
-          </form>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="mb-2 text-medium font-medium text-gray-900 flex gap-1 items-center"
+                >
+                  <RiMessage3Fill /> Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="3"
+                  className="block w-full p-2.5 text-medium text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                  placeholder="Leave a comment..."
+                ></textarea>
+              </div>
+
+              <div className="flex justify-center sm:justify-end">
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white px-10 py-2 rounded-md text-xl hover:bg-blue-800 flex items-center gap-2"
+                  disabled={loading} // Disable submit button while loading
+                >
+                  {loading ? (
+                    <span>Loading...</span>
+                  ) : (
+                    <>
+                      <FaCheckCircle />
+                      Submit
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div className="flex space-x-4 justify-center m-5">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appointment Confirmation</title>
+    <title>Customer Appointment Confirmation</title>
     <style>
       * {
         margin: 0;
@@ -21,7 +21,7 @@
         padding: 40px;
         border-radius: 10px;
         width: 100%;
-        max-width: 650px;
+        max-width: 700px;
         margin: 0 auto;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
@@ -38,16 +38,23 @@
         margin-bottom: 15px;
         line-height: 1.6;
       }
-      ul {
-        list-style: none;
-        margin-top: 15px;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
       }
-      li {
-        margin-bottom: 10px;
-        font-size: 1em;
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
       }
-      li strong {
-        color: #2a2a2a;
+      th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+      }
+      td {
+        background-color: #fafafa;
       }
       .signature {
         margin-top: 30px;
@@ -106,46 +113,71 @@
       />
 
       <!-- Main heading -->
-      <h2>Contact Confirmation</h2>
+      <h2>Contact To Customer Now</h2>
 
       <!-- Greeting -->
-      <p>Dear {{name}},</p>
+      <p>Dear Team,</p>
 
       <!-- Confirmation Message -->
       <p>
-        Thank you for reaching out to Sai Gayatri Greentech! We have
-        successfully received your inquiry and are processing your request. We
-        appreciate your interest in our solar solutions.
+        Below are the details of a new customer inquiry. Please follow up with
+        the customer as soon as possible to provide them with the necessary
+        information about our solar solutions and help them with their needs.
       </p>
 
-      <!-- Additional Information -->
-      <p>
-        Our team will contact you soon to discuss your requirements in detail
-        and provide further assistance. We look forward to helping you go solar!
-      </p>
+      <!-- Customer Details Table -->
+      <h3>Customer Details:</h3>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{name}}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{email}}</td>
+        </tr>
+        <tr>
+          <th>Phone Number</th>
+          <td>{{phone}}</td>
+        </tr>
+        <tr>
+          <th>Message</th>
+          <td>{{message}}</td>
+        </tr>
+      </table>
 
-      <!-- Appointment Details -->
-      <h3>Your Details:</h3>
-      <ul>
-        <li><strong>Name:</strong> {{name}}</li>
-        <li><strong>Email:</strong> {{email}}</li>
-        <li><strong>Phone Number:</strong> {{phone}}</li>
-        <li><strong>Message:</strong> {{message}}</li>
-      </ul>
-
-      <p>
-        If you have any further questions or need to make changes to your
-        contact info, feel free to reach out to us. You can contact us at:
-        <strong>+91 8523811173</strong> or via email.
-      </p>
-
-      <a href="tel:+918523811173" class="btn">Call Us Now</a>
+      <!-- Follow-up Instructions -->
       <br />
       <br />
+      <h3>Action Required:</h3>
+      <br />
       <p>
-        We look forward to connecting with you soon and helping you with your
-        solar needs.
+        1. <strong>Immediate Contact</strong>: Reach out to the customer within
+        24 hours. Use the contact details above to call or email them.
       </p>
+      <p>
+        2. <strong>Provide Information</strong>strong>: During your
+        conversation, provide the customer with details about our solar
+        solutions, benefits, and how we can assist them.
+      </p>
+      <p>
+        3. <strong>Schedule Appointment</strong>strong>: If the customer is
+        interested, schedule a site visit or consultation.
+      </p>
+      <p>
+        4. <strong>Follow-up</strong>: After the initial conversation, send a
+        follow-up email summarizing what was discussed and next steps. Include a
+        link to our website or resources for further reading.
+      </p>
+
+      <!-- Contact Information for the Employee -->
+      <p>
+        If you have any questions or need assistance, please do not hesitate to
+        contact your manager or refer to our internal resources.
+      </p>
+
+      <!-- Call to Action Button -->
+      <a href="tel:{{phone}}}" class="btn">Call Customer Now</a>
 
       <!-- Signature Section -->
       <div class="signature">
