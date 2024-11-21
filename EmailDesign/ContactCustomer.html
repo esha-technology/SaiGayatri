@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Confirmation</title>
+    <style>
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 20px;
+      }
+
+      /* Container for the content */
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header styles */
+      h2 {
+        color: #2a2a2a;
+        font-size: 1.6em;
+        text-align: center;
+        font-weight: 900;
+        margin-bottom: 20px;
+      }
+
+      /* Paragraph styles */
+      p {
+        color: #555;
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+
+      /* Appointment details list */
+      ul {
+        list-style: none;
+        margin-top: 10px;
+      }
+
+      li {
+        margin-bottom: 10px;
+        font-size: 1em;
+      }
+
+      li strong {
+        color: #2a2a2a;
+      }
+
+      /* Signature section */
+      .signature {
+        margin-top: 30px;
+        font-size: 1.1em;
+      }
+
+      /* Footer styles */
+      .footer {
+        font-size: 0.9em;
+        color: #777;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      /* Logo styling */
+      .logo {
+        display: block;
+        margin: 0 auto 20px;
+        max-width: 200px;
+      }
+
+      /* Responsive design */
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        p {
+          font-size: 0.95em;
+        }
+
+        .signature,
+        .footer {
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Logo -->
+      <img
+        src="https://esha-technology.vercel.app/eshaLogo.png"
+        alt="Esha Technology Logo"
+        class="logo"
+      />
+
+      <!-- Main heading -->
+      <h2>Contact Conformation</h2>
+
+      <!-- Greeting -->
+      <p>Dear {{name}},</p>
+
+      <!-- Confirmation Message -->
+      <p>
+        Thank you for reaching out to Esha Technology! We have successfully
+        received your inquiry and wanted to confirm that we are processing your
+        request.
+      </p>
+
+      <!-- Appointment Details -->
+      <h3>Your Details:</h3>
+      <ul>
+        <li><strong>Name:</strong> {{name}}</li>
+        <li><strong>Email:</strong> {{email}}</li>
+        <li><strong>Phone Number:</strong> {{phone}}</li>
+        <li><strong>Message:</strong> {{message}}</li>
+        <li><strong>Service:</strong> {{services}}</li>
+      </ul>
+
+      <!-- Additional Information -->
+      <p>
+        If you have any further questions or need to make changes to your
+        Contact Info, please don't hesitate to contact us. Our Contact Number
+        +91 8523811173
+      </p>
+
+      <p>
+        Thank you for choosing Esha Technology. We are excited to connect with
+        you soon!
+      </p>
+
+      <!-- Signature Section -->
+      <div class="signature">
+        <h5>Best regards,</h5>
+        <h5><strong>Esha Technology</strong></h5>
+        <h5>Phone: 8523811173</h5>
+        <h5>Email: eshatechnologyprvtltd@gmail.com</h5>
+        <h5>Location:</h5>
+        <a href="https://maps.app.goo.gl/B3WbQN3t81S7fddp9" target="_blank"
+          >https://maps.app.goo.gl/B3WbQN3t81S7fddp9</a
+        >
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>
+          © 2024 Esha Technology | 8523811173 | eshatechnologyprvtltd@gmail.com
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

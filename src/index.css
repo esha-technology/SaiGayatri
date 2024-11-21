@@ -26,3 +26,8 @@ input[type="number"]::-ms-clear {
   text-shadow: 0px 0px 50px orange;
   color: orange;
 }
+
+.shadowBg {
+  filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
+  border-radius: 0px 30px 0px 30px;
+}

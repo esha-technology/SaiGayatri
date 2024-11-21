@@ -6,7 +6,7 @@ import { PiSolarPanelDuotone } from "react-icons/pi";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 px-5 bg-transparent relative z-50 text-white font-poppins mt-1">
+    <div className="navbar bg-base-100 px-7 pt-3 bg-transparent relative z-50 text-white font-poppins py-0 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +50,15 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Sai Gayatri</a>
+        <div className="relative filter brightness-125 contrast-150">
+          <img
+            src="/solarLogo.png"
+            alt="logo"
+            loading="lazy"
+            className="z-10 relative shadowBg "
+            width={170}
+          />
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex  ">
         <ul className="menu menu-horizontal text-base font-semibold gap-5 bg-white bg-opacity-10 px-3   rounded-full ">

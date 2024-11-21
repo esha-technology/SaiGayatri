@@ -26,7 +26,7 @@ const HeroSection = () => {
     <div>
       <section className="relative pt-24 pb-10 -mt-20 ">
         {/*bg color */}
-        <div className="absolute inset-0 bg-slate-700 opacity-60 filter brightness-50 z-10"></div>
+        <div className="absolute inset-0 bg-slate-700 opacity-80 filter brightness-50 z-10"></div>
 
         {/* bg video */}
         <div className="absolute inset-0 bg-[url('/solarBgImage.jpeg')] bg-no-repeat bg-cover z-0"></div>

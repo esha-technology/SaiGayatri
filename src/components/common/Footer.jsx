@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MdEmail } from "react-icons/md";
+import { PiPhoneFill } from "react-icons/pi";
 
 const Footer = () => {
   return (
@@ -13,10 +15,28 @@ const Footer = () => {
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               /> */}
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Sai Gayatri
-              </span>
+              <div className=" filter contrast-125">
+                <img
+                  src="/solarLogo.png"
+                  alt="logo"
+                  loading="lazy"
+                  className="z-10 relative  "
+                  width={220}
+                />
+              </div>
             </a>
+            <div className="mt-7 font-mont font-medium flex flex-col gap-3 text-slate-600">
+              <p className="flex gap-2 items-center">
+                <MdEmail />
+                <a href="mailto:syedtalhaahemd123786@gmail.com">
+                  syedtalhaahemd123786@gmail.com
+                </a>
+              </p>
+              <p className="flex gap-2 items-center">
+                <PiPhoneFill />
+                <a href="tel:+918143923984">+91 8143923984</a>
+              </p>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
