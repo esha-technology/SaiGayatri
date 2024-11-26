@@ -7,8 +7,8 @@ const Blog = () => {
     <>
       <ScrollToTop />
 
-      <div>
-        <TopHeading heading={"Our Blogs"} />
+      <div className="relative">
+        <TopHeading heading={" Blogs"} img={"/Icons/Blogs.svg"} />
         <BlogCollection />
       </div>
     </>

@@ -12,8 +12,8 @@ const Why = () => {
           One Investment. Endless Benefits.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-14 max-w-screen-md mx-auto">
-          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col">
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-14  mx-auto">
+          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col  hover:scale-95  hover:drop-shadow-[0_35px_35px_rgb(211,211,211)] duration-300">
             <img
               src="/Icons/bill.png"
               alt="bill"
@@ -23,7 +23,7 @@ const Why = () => {
               Lower Energy Bills
             </h5>
           </div>
-          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col">
+          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col  hover:scale-95  hover:drop-shadow-[0_35px_35px_rgb(211,211,211)] duration-300 ">
             <img
               src="/Icons/savingMoney.png"
               alt="saving money"
@@ -33,7 +33,7 @@ const Why = () => {
               Secure Investment, High Returns
             </h5>
           </div>
-          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col">
+          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col  hover:scale-95  hover:drop-shadow-[0_35px_35px_rgb(211,211,211)] duration-300">
             <img
               src="/Icons/env.png"
               alt="environment friendly"
@@ -43,7 +43,7 @@ const Why = () => {
               Environment Friendly
             </h5>
           </div>
-          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col">
+          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col  hover:scale-95  hover:drop-shadow-[0_35px_35px_rgb(211,211,211)] duration-300">
             <img
               src="/Icons/maintain.png"
               alt="easy to maintain"
@@ -53,7 +53,7 @@ const Why = () => {
               Easy To Maintain
             </h5>
           </div>
-          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col">
+          <div className="w-36 sm:w-44 lg:w-48 items-center flex flex-col  hover:scale-95  hover:drop-shadow-[0_35px_35px_rgb(211,211,211)] duration-300">
             <img
               src="/Icons/people.png"
               alt="anyone can use"

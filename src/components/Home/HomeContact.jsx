@@ -123,7 +123,7 @@ const HomeContact = () => {
         <img src="/cut.png" alt="" className="w-full" />
       </div>
 
-      <div className="absolute z-20 -top-0 w-full rotate-180">
+      <div className="absolute z-20 -top-1 w-full rotate-180">
         <img src="/cut.png" alt="" className="w-full" />
       </div>
 

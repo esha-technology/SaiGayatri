@@ -30,7 +30,7 @@ input[type="number"]::-ms-clear {
 
 @keyframes smooth-shadow {
   0% {
-    text-shadow: 0px 0px 50px orange;
+    text-shadow: 0px 0px 50px rgb(255, 165, 0);
   }
   50% {
     text-shadow: 0px 0px 100px orange; /* Increase the shadow size */
