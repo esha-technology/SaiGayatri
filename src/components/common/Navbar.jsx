@@ -1,14 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { TbHome } from "react-icons/tb";
-import { MdEditNote } from "react-icons/md";
-import { PiSolarPanelDuotone } from "react-icons/pi";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 px-7 pt-3 bg-transparent relative z-50 text-white font-poppins py-0 ">
+    <div className="navbar bg-base-100 px-7 pt-3 bg-transparent relative z-50 text-white font-poppins py-0  ">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown  -ml-7 lg:ml-0">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -31,32 +27,39 @@ const Navbar = () => {
           >
             <li className="rounded-full  hover:bg-blue-500 duration-200 shadowNav ">
               <Link to={"/"}>
-                <TbHome size={18} />
+                <img src="/Icons/Home.svg" alt="" width={20} />
                 Home
               </Link>
             </li>
+            <li className="rounded-full  hover:bg-blue-500 duration-200 shadowNav ">
+              <Link to={"/services"}>
+                <img src="/Icons/Services.svg" alt="" width={20} />
+                Services
+              </Link>
+            </li>
+
             <li className="rounded-full  hover:bg-blue-500 duration-200 shadowNav">
               <Link to={"/blog"}>
-                <MdEditNote size={20} />
+                <img src="/Icons/Blogs.svg" alt="" width={25} />
                 Blog
               </Link>
             </li>
 
             <li className="rounded-full  hover:bg-blue-500 duration-200 shadowNav">
               <Link to={"/solarCalculator"}>
-                <PiSolarPanelDuotone size={20} />
+                <img src="/Icons/SolarCalculator.svg" alt="" width={20} />
                 Solar Calculator
               </Link>
             </li>
           </ul>
         </div>
-        <div className="relative filter brightness-125 contrast-150">
+        <div className="relative filter brightness-[1000] contrast-150">
           <img
             src="/solarLogo.png"
             alt="logo"
             loading="lazy"
             className="z-10 relative shadowBg "
-            width={170}
+            width={180}
           />
         </div>
       </div>
@@ -65,7 +68,9 @@ const Navbar = () => {
           <li className="rounded-full bg-black bg-opacity-20 hover:bg-blue-500 duration-200 shadowNav">
             <Link to={"/"}>Home</Link>
           </li>
-
+          <li className="rounded-full bg-black bg-opacity-20 hover:bg-blue-500 duration-200 shadowNav">
+            <Link to={"/services"}>Services</Link>
+          </li>
           <li className="rounded-full bg-black bg-opacity-20 hover:bg-blue-500 duration-200 shadowNav">
             <Link to={"/blog"}>Blog</Link>
           </li>
@@ -75,7 +80,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="bg-white text-black px-3 py-2 rounded-xl font-semibold ">
+        <Link
+          to={"/#contact"}
+          className="bg-white text-black px-3 py-2 rounded-xl font-semibold "
+        >
           Contact Us
         </Link>
       </div>

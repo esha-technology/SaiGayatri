@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MdEmail } from "react-icons/md";
-import { PiPhoneFill } from "react-icons/pi";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -27,23 +25,24 @@ const Footer = () => {
             </a>
             <div className="mt-7 font-mont font-medium flex flex-col gap-3 text-slate-600">
               <p className="flex gap-2 items-center">
-                <MdEmail />
+                <img src="/Icons/email.svg" alt="Email" width={20} />
                 <a href="mailto:syedtalhaahemd123786@gmail.com">
                   syedtalhaahemd123786@gmail.com
                 </a>
               </p>
               <p className="flex gap-2 items-center">
-                <PiPhoneFill />
+                <img src="/Icons/phone.svg" alt="Email" width={20} />
+
                 <a href="tel:+918143923984">+91 8143923984</a>
               </p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">
                 Navigate
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500  font-medium">
                 <li className="mb-4">
                   <Link to={"/"} className="hover:underline">
                     Home
@@ -62,10 +61,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">
                 Social Media
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500  font-medium">
                 <li className="mb-4">
                   <a
                     href="https://github.com/themesberg/flowbite"
@@ -93,10 +92,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">
                 Legal
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500  font-medium">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
                     Privacy Policy

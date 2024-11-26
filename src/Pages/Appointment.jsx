@@ -1,15 +1,9 @@
-import React, { useState } from "react";
-import Heading from "../components/common/Heading";
-import { IoIosPerson } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import { PiPhoneFill } from "react-icons/pi";
-import { FaCheckCircle } from "react-icons/fa";
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa"; // Import specific icons
+import React, { lazy, useState } from "react";
 import "./appointment.css";
-import { BsFillLaptopFill } from "react-icons/bs";
 import DatePicker from "react-datepicker"; // Import react-datepicker
 import "react-datepicker/dist/react-datepicker.css"; // Import datepicker styles
-import { SlCalender } from "react-icons/sl";
+import ScrollToTop from "../components/common/ScrollToTop";
+const TopHeading = lazy(() => import("../components/common/TopHeading"));
 
 const Appointment = () => {
   const [mode, setMode] = useState("Virtual"); // Initialize mode state
@@ -86,13 +80,15 @@ const Appointment = () => {
 
   return (
     <>
+      <ScrollToTop />
+      <TopHeading heading={"Book Appointment"} />
+
       <div className="contact-container">
         <div className="contact-form">
-          <Heading>Appointment</Heading>
           <form onSubmit={handleSubmit} className="form">
             <div>
               <label htmlFor="name" className="label">
-                <IoIosPerson />
+                <img src="/Icons/person.svg" alt="icon" width={20} />
                 Name
               </label>
               <input
@@ -110,7 +106,7 @@ const Appointment = () => {
 
             <div>
               <label htmlFor="email" className="label">
-                <MdEmail />
+                <img src="/Icons/gmail.svg" alt="icon" width={18} />
                 Email
               </label>
               <input
@@ -128,7 +124,7 @@ const Appointment = () => {
 
             <div>
               <label htmlFor="phone" className="label">
-                <PiPhoneFill />
+                <img src="/Icons/phone.svg" alt="icon" width={20} />
                 Phone
               </label>
               <input
@@ -147,7 +143,8 @@ const Appointment = () => {
             <div className="appointmentbox">
               <div>
                 <label htmlFor="appointment" className="label">
-                  <BsFillLaptopFill /> Appointment Type
+                  <img src="/Icons/mode.svg" alt="icon" width={25} />
+                  Appointment Type
                 </label>
                 <select
                   id="appointment"
@@ -171,9 +168,9 @@ const Appointment = () => {
                 )}
               </div>
 
-              <div className="dateBox">
+              <div className="dateBox ">
                 <label htmlFor="appointment-date" className="label">
-                  <SlCalender />
+                  <img src="/Icons/calender.svg" alt="icon" width={20} />
                   Appointment Date
                 </label>
                 <DatePicker
@@ -193,7 +190,7 @@ const Appointment = () => {
 
             <div className="submit-container">
               <button type="submit" className="submit-btn">
-                <FaCheckCircle />
+                <img src="/Icons/check.svg" alt="icon" width={20} />
                 Submit
               </button>
             </div>
@@ -207,7 +204,7 @@ const Appointment = () => {
             rel="noopener noreferrer"
             className="social-btn fb-btn"
           >
-            <FaFacebook />
+            <img src="/Icons/fb.svg" alt="icon" width={35} />
           </a>
           <a
             href="https://www.instagram.com"
@@ -215,7 +212,7 @@ const Appointment = () => {
             rel="noopener noreferrer"
             className="social-btn ig-btn"
           >
-            <FaInstagram />
+            <img src="/Icons/instagram.svg" alt="icon" width={35} />
           </a>
           <a
             href="https://www.whatsapp.com"
@@ -223,7 +220,7 @@ const Appointment = () => {
             rel="noopener noreferrer"
             className="social-btn wa-btn"
           >
-            <FaWhatsapp />
+            <img src="/Icons/whatsapp.svg" alt="icon" width={35} />
           </a>
         </div>
       </div>

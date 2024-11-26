@@ -1,14 +1,17 @@
 import React from "react";
-import Heading from "../components/common/Heading";
 import TopHeading from "../components/common/TopHeading";
-
+import BlogCollection from "../components/Blog/BlogCollection";
+import ScrollToTop from "../components/common/ScrollToTop";
 const Blog = () => {
   return (
-    <div>
+    <>
+      <ScrollToTop />
+
       <div>
-        <TopHeading imgUrl={"/blogImgBg.jpg"} />
+        <TopHeading heading={"Our Blogs"} />
+        <BlogCollection />
       </div>
-    </div>
+    </>
   );
 };
 

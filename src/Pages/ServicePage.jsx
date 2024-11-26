@@ -1,11 +1,12 @@
 import React from "react";
 import TopHeading from "../components/common/TopHeading";
-const SolarCalculator = () => {
+
+const ServicePage = () => {
   return (
     <>
-      <TopHeading heading={"Solar Calculator"} />
+      <TopHeading heading={"Services"} />
     </>
   );
 };
 
-export default SolarCalculator;
+export default ServicePage;

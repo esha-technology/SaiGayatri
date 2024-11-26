@@ -23,11 +23,37 @@ input[type="number"]::-ms-clear {
 }
 
 .solar {
-  text-shadow: 0px 0px 50px orange;
   color: orange;
+  text-shadow: 0px 0px 50px orange;
+  animation: smooth-shadow 10s infinite alternate;
+}
+
+@keyframes smooth-shadow {
+  0% {
+    text-shadow: 0px 0px 50px orange;
+  }
+  50% {
+    text-shadow: 0px 0px 100px orange; /* Increase the shadow size */
+  }
+  100% {
+    text-shadow: 0px 0px 50px orange; /* Return to normal size */
+  }
 }
 
 .shadowBg {
   filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
   border-radius: 0px 30px 0px 30px;
+}
+
+.truncate-heading {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Ensures multi-line wrapping */
+}
+
+html {
+  scroll-behavior: smooth;
 }
