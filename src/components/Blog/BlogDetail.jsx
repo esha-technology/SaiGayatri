@@ -46,7 +46,7 @@ const BlogDetail = () => {
   return (
     <>
       <ScrollToTop />
-
+      <TopHeading />
       <div className="blog-detail-container">
         {/* Main Blog Content */}
         <div className="blog-detail-main">

@@ -5,9 +5,12 @@
   display: flex;
   justify-content: space-between;
   min-height: 100vh;
-  margin-top: 70px;
-  padding: 0px 50px 0px 30px;
-}
+  margin-top: -300px;
+  padding: 60px 50px 0px 30px;
+  z-index: 100;
+  position: relative;
+  background-color: white;
+  }
 
 /* Main blog content section */
 .blog-detail-main {
