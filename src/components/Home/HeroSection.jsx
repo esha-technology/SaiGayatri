@@ -10,11 +10,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-28 pb-40 -mt-24 ">
+    <section className="relative pt-28 lg:pb-40 pb-16 -mt-24 ">
       {/*bg color */}
       <div className="absolute inset-0 bg-slate-700 opacity-80 filter brightness-50  z-10"></div>
 
-      {/* Background image (shows while video is loading) */}
+      {/* Background  image (shows while video is loading) */}
       <div className="absolute inset-0 bg-[url('/solarBgImage.jpeg')] bg-no-repeat bg-cover z-0"></div>
 
       {/* Video container (hidden until video is loaded) */}
