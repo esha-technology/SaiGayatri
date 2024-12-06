@@ -2,7 +2,7 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
+    <div className="flex justify-center items-center h-screen bg-white mt-5">
       <img
         src="/solarLogo.png"
         alt="Loading..."

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loading from "./components/common/Loading";
 
@@ -14,8 +14,18 @@ const Appointment = lazy(() => import("./Pages/Appointment"));
 const ServicePage = lazy(() => import("./Pages/ServicePage"));
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="max-w-[1700px] mx-auto" id="toTop">
+    <div className="max-w-[1700px] mx-auto relative" id="toTop">
       <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Suspense
           fallback={
@@ -24,6 +34,7 @@ function App() {
             </div>
           }
         >
+          <div>{isLoading ? <Loading /> : null}</div>
           <Navbar />
           <FixedIcon />
           <Routes>

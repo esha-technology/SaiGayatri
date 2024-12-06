@@ -3,7 +3,7 @@ import React from "react";
 const Why = () => {
   return (
     <section className="w-full   mx-auto py-14">
-      <div className="w-full mx-auto sm:px-12 mb-10 lg:mb-20">
+      <div className="w-full mx-auto sm:px-12 mb-0  ">
         <h1 className="flex flex-col font-poppins font-extrabold  text-center mb-5 text-black">
           <span className="text-8xl">Why </span>
           <span className="text-5xl mt-4 solar">Go Solar?</span>
