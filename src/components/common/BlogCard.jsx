@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const BlogCard = ({ title, slug, id }) => {
-  console.log(id);
-
   return (
     <Link to={`/blog/${slug}`}>
       <article className="p-3 cursor-pointer bg-white rounded-lg border border-gray-200 shadow-md hover:scale-95 duration-200">
