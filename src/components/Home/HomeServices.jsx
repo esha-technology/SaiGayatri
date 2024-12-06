@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 // import Heading from "../common/Heading";
 import HeroSectionCard from "./HeroSectionCard";
-import servicesProvideData from "../../Data/servicesProvideData";
+import servicesProvideData from "../../Data/ServicesProvideData.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
