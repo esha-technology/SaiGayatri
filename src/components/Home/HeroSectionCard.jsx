@@ -23,7 +23,7 @@ const HeroSectionCard = ({ data }) => {
             {kw}
           </p>
           <button className="text-[16px] md:text-[20px] px-4 py-2  bg-white text-black font-semibold rounded hover:bg-gray-200">
-            Know More
+            See More
           </button>
         </div>
       </div>
