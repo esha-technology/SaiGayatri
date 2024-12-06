@@ -190,7 +190,9 @@ const Appointment = () => {
 
             <div className="submit-container">
               <button type="submit" className="submit-btn">
-                <img src="/Icons/check.svg" alt="icon" width={20} />
+                <span className="filter invert">
+                  <img src="/Icons/check.svg" alt="icon" width={20} />
+                </span>
                 Submit
               </button>
             </div>
