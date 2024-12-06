@@ -91,13 +91,13 @@ const HomeServices = () => {
           ))}
 
           <div
-            className=" absolute top-32 left-28 z-10 w-fit h-fit arrowShadow"
+            className=" absolute top-32 left-10 z-10 w-fit h-fit arrowShadow hidden lg:block"
             onClick={handlePrev}
           >
             <img src="/Icons/ServiceArrow.png" alt="arrow" />
           </div>
           <div
-            className=" absolute top-32 right-28 z-10 w-fit h-fit arrowShadow rotate-180"
+            className=" absolute top-32 right-10 z-10 w-fit h-fit arrowShadow rotate-180 hidden lg:block"
             onClick={handleNext}
           >
             <img src="/Icons/ServiceArrow.png" alt="arrow" />
