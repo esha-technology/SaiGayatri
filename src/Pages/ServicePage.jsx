@@ -2,20 +2,56 @@ import React from "react";
 import TopHeading from "../components/common/TopHeading";
 import servicesProvideData from "../Data/ServicesProvideData.js";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
+
 const ServicePage = () => {
   return (
     <>
       <TopHeading heading={"Services"} />
-      <section className="relative -mt-56 z-20">
+      <section className="relative -mt-56 z-20 px-5">
         <div className="flex flex-col gap-5">
           {servicesProvideData.map((item) => (
             <div key={item.id}>
-              <div className="relative w-[1200px] h-[350px] mx-auto rounded-[25px] overflow-hidden group">
-                <img
-                  src={"/blogImgBg.jpg"}
-                  alt="hello"
-                  className="w-full h-full object-cover"
-                />
+              {/* <Swiper
+                modules={[Autoplay, Pagination]}
+                spaceBetween={10}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+              >
+                {item.images.map((y, index) => (
+                  <SwiperSlide key={index}>
+                    <img src={`${y}`} alt="location" />
+                  </SwiperSlide>
+                ))}
+              </Swiper> */}
+
+              <div className="relative w-full lg:w-[1200px] h-[350px] mx-auto rounded-[25px] overflow-hidden group">
+                <Swiper
+                  modules={[Autoplay, Pagination]}
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{ delay: 2000, disableOnInteraction: false }}
+                  pagination={{ clickable: true }}
+                  className="service-swiper"
+                >
+                  {item.images.map((y, index) => (
+                    <SwiperSlide key={index}>
+                      <img
+                        src={`${y}`}
+                        alt="hello"
+                        className="w-full h-full object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
                 <div className="absolute right-0 top-0 h-full w-[700px] bg-gradient-to-l from-black to-transparent text-white p-4 z-20 pr-20">
                   <div className=" flex justify-end h-full items-start">
                     <div className="text-right flex flex-col gap-3">
@@ -43,6 +79,7 @@ const ServicePage = () => {
           ))}
         </div>
       </section>
+
       {/* <div className="relative w-[1200px] h-[350px] mx-auto  rounded-[25px] overflow-hidden">
         <img
           src={"/blogImgBg.jpg"}
