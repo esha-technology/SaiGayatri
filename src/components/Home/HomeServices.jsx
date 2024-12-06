@@ -56,7 +56,7 @@ const HomeServices = () => {
             delay: 3000, // Auto-scroll every 2 seconds
             disableOnInteraction: false, // Keeps auto-scroll working even after user interaction
           }}
-          grabCursor={true} // Allow the user to drag the slider
+          grabCursor={true} // Allow the user to drag the slide
           className="mySwiper border relative -z-10 "
           breakpoints={{
             800: {
