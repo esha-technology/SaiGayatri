@@ -59,16 +59,13 @@ const HomeServices = () => {
           grabCursor={true} // Allow the user to drag the slide
           className="mySwiper border relative -z-10 "
           breakpoints={{
-            800: {
-              spaceBetween: 400,
-            },
-            1000: {
+            1024: {
               slidesPerView: 2,
-              spaceBetween: 200,
+              spaceBetween: 250,
             },
             1200: {
               slidesPerView: 2,
-              spaceBetween: -60,
+              spaceBetween: 50,
             },
             1284: {
               slidesPerView: 2,
