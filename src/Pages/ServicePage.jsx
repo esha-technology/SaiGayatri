@@ -36,7 +36,7 @@ const ServicePage = () => {
                 ref={(el) => (sectionRefs.current[headingWithoutSpaces] = el)}
               >
                 {headingWithoutSpaces != "BlindSchool" ? (
-                  <hr className=" w-3/4 mb-2 mx-auto  " />
+                  <hr className=" w-3/4 lg:mb-16 mx-auto  lg:mt-14 my-5 " />
                 ) : null}
                 {/* for mobile device only  */}
                 <div className="block lg:hidden h-full w-full max-w-[700px] p-4 z-20 lg:pr-20">
